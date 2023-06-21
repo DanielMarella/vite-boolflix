@@ -1,9 +1,7 @@
 <template>
-
-    <h4>
-        sono la movie list
-    </h4>
-    <SingleMovie />
+    <div class="container">
+        <SingleMovie />
+    </div>
 </template>
 
 
@@ -15,7 +13,9 @@ import SingleMovie from './SingleMovie.vue';
 export default {
     components: {
         SingleMovie,
-    }
+    },
+
+    
 }
 </script>
 
