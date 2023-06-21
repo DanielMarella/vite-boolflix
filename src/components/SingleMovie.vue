@@ -1,7 +1,11 @@
 <template>
-    <h5>
-        sono il single movie
-    </h5>
+
+    <p>Titolo</p>
+    <p>Titolo Originale</p>
+    <p>Lingua</p>
+    <p>Voto</p>
+
+
 </template>
 
 
