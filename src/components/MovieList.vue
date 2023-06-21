@@ -1,6 +1,12 @@
 <template>
     <div class="container">
-        <SingleMovie />
+        <SingleMovie 
+        :title = "movies.title"
+        :originalTitle = "movies.original_title"
+        :lang = "movies.original_language"
+        :rate = "movies.vote_average"
+
+        />
     </div>
 </template>
 
@@ -15,7 +21,9 @@ export default {
         SingleMovie,
     },
 
-    
+    props : {
+        movies : Array,  
+    },
 }
 </script>
 

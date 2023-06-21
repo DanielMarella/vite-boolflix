@@ -5,7 +5,7 @@
     <div class="container mb-5">
         <h1>Lista dei film:</h1>
     </div>
-    <MovieList />
+        <MovieList :movies="movies" />
 </template>
 
 

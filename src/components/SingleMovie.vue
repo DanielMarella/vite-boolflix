@@ -1,9 +1,9 @@
 <template>
 
-    <p>Titolo</p>
-    <p>Titolo Originale</p>
-    <p>Lingua</p>
-    <p>Voto</p>
+    <p>{{title}}</p>
+    <p>{{ originalTitle }}</p>
+    <p>{{ lang }}</p>
+    <p>{{ rate }}</p>
 
 
 </template>
@@ -12,7 +12,12 @@
 <script>
     name : 'SingleMovie'
 export default {
-    
+    props : {
+        title : String,
+        originalTitle : String,
+        lang : String,
+        rate : Number,
+    }
 }
 </script>
 
