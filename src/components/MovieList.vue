@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <SingleMovie 
+    <div class="container d-flex flex-wrap">
+        <SingleMovie v-for="movies in movies"
         :title = "movies.title"
         :originalTitle = "movies.original_title"
         :lang = "movies.original_language"
@@ -17,12 +17,20 @@ import SingleMovie from './SingleMovie.vue';
     name : 'MovieList'
 
 export default {
+
+    data() {
+        return {
+
+        }
+    },
+
+
     components: {
         SingleMovie,
     },
 
     props : {
-        movies : Array,  
+        movies : Object,  
     },
 }
 </script>
