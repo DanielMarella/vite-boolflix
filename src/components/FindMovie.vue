@@ -1,8 +1,8 @@
 <template>
     <div class="container mb-5">
 
-        <input type="text">
-        <button> Clicca qui per ricercare</button>
+        <input type="text" v-model="searchMovie" >
+        <button @click="$emit('search',searchMovie)"> Clicca qui per ricercare</button>
 
     </div>
 </template>
@@ -12,7 +12,7 @@
     name : 'FindMovie'
 
     export default {
-        
+        searchMovie : '',
 }
 
 </script>
