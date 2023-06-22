@@ -1,6 +1,7 @@
 <template>
 <div class="card mx-3 mb-3">
     <h3>Movie</h3>
+    <p><img :src="`${imageUrl}${imageSize}${img}`"></p>
     <p>Titolo: {{title}}</p>
     <p>Titolo Originale: {{ originalTitle }}</p>
     <p v-if="langToCheck.includes(lang)">Lingua: {{ lang.toUpperCase() }}</p>
@@ -18,11 +19,14 @@ export default {
 
     data() {
         return {
-            // langToCheck : ['en','ja','hi','da','zh','iu'],
+            langToCheck : ['en','ja','hi','da','zh','iu'],
+            imageUrl: 'https://image.tmdb.org/t/p/',
+            imageSize : 'w154',
         }
     },
 
     props : {
+        img : Image,
         title : String,
         originalTitle : String,
         lang : String,
@@ -34,7 +38,6 @@ export default {
 <style lang="scss" scoped>
     .card{
         width: 200px ;
-        height: 250px ;
         border: 2px solid black;
     }
 </style>
