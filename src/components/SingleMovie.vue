@@ -1,6 +1,6 @@
 <template>
 <div class="card mx-3 mb-3">
-
+    <h3>Movie</h3>
     <p>Titolo: {{title}}</p>
     <p>Titolo Originale: {{ originalTitle }}</p>
     <p>Lingua: {{ lang }}</p>
@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
     .card{
         width: 200px ;
-        height: 200px ;
+        height: 250px ;
         border: 2px solid black;
     }
 </style>
