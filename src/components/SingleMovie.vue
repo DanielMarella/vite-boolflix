@@ -3,11 +3,8 @@
     <h3>Movie</h3>
     <p>Titolo: {{title}}</p>
     <p>Titolo Originale: {{ originalTitle }}</p>
-    <p>Lingua: 
-
-        <img :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`">
-
-</p>
+    <p v-if="langToCheck.includes(lang)">Lingua: {{ lang.toUpperCase() }}</p>
+    <p v-else><img  :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></p>
     <p>Voto: {{ rate }}</p>
 </div>
 
@@ -19,6 +16,11 @@
     name : 'SingleMovie'
 export default {
 
+    data() {
+        return {
+            // langToCheck : ['en','ja','hi','da','zh','iu'],
+        }
+    },
 
     props : {
         title : String,

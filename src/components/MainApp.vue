@@ -4,6 +4,10 @@
     </div>
     <div class="container mb-5">
         <h1>Lista dei film:</h1>
+        
+
+
+
     </div>
     <div class="container">
         <MovieList :movies="movies" />
@@ -36,6 +40,7 @@ export default {
                 movies : [],
                 movieApi : 'https://api.themoviedb.org/3/search/movie',
                 filmsApi : 'https://api.themoviedb.org/3/search/tv',
+
 
             }
         },
