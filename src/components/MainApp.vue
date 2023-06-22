@@ -1,17 +1,20 @@
 <template>
     <div>
-        <FindMovie @search="searchMovies"/>
+        <FindMovie @search="searching"/>
     </div>
     <div class="container mb-5">
         <h1>Lista dei film:</h1>
     </div>
     <div class="container">
         <MovieList :movies="movies" />
+        <SerieTvList :films="films" />
+        
     </div>
 </template>
 
 
 <script>
+import SerieTvList from './SerieTvList.vue';
 import MovieList from './MovieList.vue';
 import FindMovie from './FindMovie.vue';
 import axios  from 'axios';
@@ -21,40 +24,42 @@ import axios  from 'axios';
 export default {
 
     components : {
-        MovieList,
-        FindMovie,
-    },
+    MovieList,
+    FindMovie,
+    SerieTvList
+},
     
     data() {
             return {
+                films : [],
                 movies : [],
-                apiUrl : 'https://api.themoviedb.org/3/search/movie?',
-                
+                movieApi : 'https://api.themoviedb.org/3/search/movie',
+                filmsApi : 'https://api.themoviedb.org/3/search/tv',
             }
         },
 
         methods: {
-            searchMovies(text = ''){
-                axios.get(this.apiUrl, {
+            searching(text = ''){
+                axios.get(this.movieApi || this.filmsApi, {
                     params: {
                     query : text,
                     api_key : '6e246ef7707d5632049a8350bf230c0f',
                     }
                 })
             .then( (response) => {
+                console.log(response.data.results)
                 this.movies = response.data.results;
-                console.log(this.movies)
+                this.films = response.data.results;
+                console.log(this.films)
             })
             .catch(function (error) {
                 console.log(error);
             })
         },
-
-
     },
 
     created() {
-        this.searchMovies();
+        this.searching();
     },
 
 }
