@@ -3,7 +3,7 @@
         <h3>Tv Series</h3>
         <p>Nome: {{name}}</p>
         <p>Nome Originale: {{ originalName }}</p>
-        <p>Lingua: {{ lang }}</p>
+        <p>Lingua:<img :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></p>
         <p>Voto: {{ rate }}</p>
     </div>
     

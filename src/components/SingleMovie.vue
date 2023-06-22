@@ -3,7 +3,11 @@
     <h3>Movie</h3>
     <p>Titolo: {{title}}</p>
     <p>Titolo Originale: {{ originalTitle }}</p>
-    <p>Lingua: {{ lang }}</p>
+    <p>Lingua: 
+
+        <img :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`">
+
+</p>
     <p>Voto: {{ rate }}</p>
 </div>
 
@@ -14,6 +18,8 @@
 <script>
     name : 'SingleMovie'
 export default {
+
+
     props : {
         title : String,
         originalTitle : String,
