@@ -30,7 +30,7 @@ export default {
     },
 
     props : {
-        movies : Object,  
+        movies : Array,  
     },
 }
 </script>
