@@ -1,6 +1,7 @@
 <template>
     <div class="container d-flex flex-wrap">
         <SingleFilm v-for="films in films"
+        :img = "films.poster_path"
         :name = "films.name"
         :originalName = "films.original_name"
         :lang = "films.original_language"
