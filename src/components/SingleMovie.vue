@@ -6,7 +6,28 @@
     <p>Titolo Originale: {{ originalTitle }}</p>
     <p v-if="langToCheck.includes(lang)">Lingua: {{ lang.toUpperCase() }}</p>
     <p v-else><img  :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></p>
-    <p>Voto: {{ interRate() }}</p>
+    <p>
+        Voto: 
+        {{ interRate() }}   
+        
+        <font-awesome-icon v-if="rate >= 2" icon="fa-solid fa-star"/>
+        <font-awesome-icon v-else="rate <= 2" icon="fa-regular fa-star" />
+
+        <font-awesome-icon v-if="rate >= 4" icon="fa-solid fa-star"/>
+        <font-awesome-icon v-else="rate <= 4" icon="fa-regular fa-star" />
+
+        <font-awesome-icon v-if="rate >= 6" icon="fa-solid fa-star"/>
+        <font-awesome-icon v-else="rate <= 6" icon="fa-regular fa-star" />
+
+        <font-awesome-icon v-if="rate >= 8" icon="fa-solid fa-star"/>
+        <font-awesome-icon v-else="rate <= 8" icon="fa-regular fa-star" />
+
+        <font-awesome-icon v-if="rate >= 10" icon="fa-solid fa-star"/>
+        <font-awesome-icon v-else="rate <= 10" icon="fa-regular fa-star" />
+
+
+    </p>
+    
 </div>
 
 
