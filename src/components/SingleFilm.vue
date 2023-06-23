@@ -53,7 +53,7 @@
 
         methods: {
         interRate(){
-            return Math.round(this.rate / 2 ).toFixed(0);
+            return Math.ceil(this.rate / 2 ).toFixed(0);
         }
     },
 

@@ -9,7 +9,7 @@
     <p>
         Voto: 
         {{ interRate() }}   
-        
+
         <font-awesome-icon v-if="rate >= 2" icon="fa-solid fa-star"/>
         <font-awesome-icon v-else="rate <= 2" icon="fa-regular fa-star" />
 
@@ -56,7 +56,7 @@ export default {
 
     methods: {
         interRate(){
-            return Math.round(this.rate / 2 ).toFixed(0);
+            return Math.ceil(this.rate / 2 ).toFixed(0);
         }
     },
 }
