@@ -4,8 +4,6 @@
     </div>
     <div class="container mb-5">
         <h1>Lista dei film:</h1>
-        
-
 
 
     </div>
@@ -40,8 +38,6 @@ export default {
                 movies : [],
                 movieApi : 'https://api.themoviedb.org/3/search/movie',
                 filmsApi : 'https://api.themoviedb.org/3/search/tv',
-
-
             }
         },
 
@@ -53,7 +49,7 @@ export default {
                 this.findFilms(text);
                 },
 
-
+            
 
             findMovie(text = '') {
             axios.get(this.movieApi, {
