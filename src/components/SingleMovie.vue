@@ -6,7 +6,7 @@
     <p>Titolo Originale: {{ originalTitle }}</p>
     <p v-if="langToCheck.includes(lang)">Lingua: {{ lang.toUpperCase() }}</p>
     <p v-else><img  :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></p>
-    <p>Voto: {{ rate }}</p>
+    <p>Voto: {{ interRate() }}</p>
 </div>
 
 
@@ -31,7 +31,13 @@ export default {
         originalTitle : String,
         lang : String,
         rate : Number,
-    }
+    },
+
+    methods: {
+        interRate(){
+            return Math.round(this.rate / 2 ).toFixed(0);
+        }
+    },
 }
 </script>
 
