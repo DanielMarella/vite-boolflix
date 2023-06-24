@@ -22,7 +22,6 @@
     </div>
 </template>
 
-
 <script>
     name : 'SingleMovie'
 export default {

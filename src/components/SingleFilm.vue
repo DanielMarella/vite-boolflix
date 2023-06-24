@@ -13,8 +13,8 @@
             <li class="list-group-item"> Voto: {{ interRate() }}</li>
             <li class="list-group-item star d-flex">
                 <p v-for="star in 5">
-                    <font-awesome-icon v-if="rate >= star *2" icon="fa-solid fa-star"/>
-                    <font-awesome-icon v-else icon="fa-regular fa-star" />
+                    <font-awesome-icon v-if="rate >= star *2" icon="fa-solid fa-star" style="color: #ffff00;"/>
+                    <font-awesome-icon v-else icon="fa-regular fa-star" style="color: #ffff00;" />
                 </p>
             </li>
         </ul>
