@@ -1,16 +1,12 @@
 <template>
-    <div>
+    <div class="container">
         <FindMovie @search=" searching "/>
     </div>
-    <div class="container mb-5">
-        <h1>Lista dei film:</h1>
-
-
-    </div>
     <div class="container">
+        <h1 class="text-danger mb-5">Lista dei film:</h1>
         <MovieList :movies="movies" />
+        <h1 class="text-danger mb-5">Lista delle SerieTv:</h1>
         <SerieTvList :films="films" />
-        
     </div>
 </template>
 

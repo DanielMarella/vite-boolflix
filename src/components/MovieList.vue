@@ -6,8 +6,6 @@
         :originalTitle = "movies.original_title"
         :lang = "movies.original_language"
         :rate = "movies.vote_average"
-
-
         />
     </div>
 </template>

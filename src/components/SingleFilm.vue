@@ -1,25 +1,27 @@
 <template>
-    <div class="card mx-3 mb-3">
-        <h3>Tv Series</h3>
-        <p><img :src="`${imageUrl}${imageSize}${img}`"></p>
-        <p>Nome: {{name}}</p>
-        <p>Nome Originale: {{ originalName }}</p>
-        <p v-if="langToCheck.includes(lang)">Lingua: {{ lang.toUpperCase() }}</p>
-        <p v-else><img  :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></p>
-        <p>
-        Voto: {{ interRate() }}   
-        </p>
-        <div class="star d-flex">
-            <p v-for="star in 5">
-                <font-awesome-icon v-if="rate >= star *2" icon="fa-solid fa-star"/>
-                <font-awesome-icon v-else icon="fa-regular fa-star" />
-            </p>
+    <div class="card mx-2 mb-4" style="width: 18rem;">
+        <img :src="`${imageUrl}${imageSize}${img}`">
+        <div class="card-body">
+            <h5 class="card-title">Nome: <br>{{name}}</h5>
+            <h5 class="card-title">Nome Originale: <br>{{ originalName }}</h5>
+            <hr>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" v-if="langToCheck.includes(lang)"> Lingua: <strong>{{ lang.toUpperCase() }}</strong></li>
+            <li class="list-group-item" v-else> Lingua: <img  :src="`https://www.countryflagicons.com/FLAT/32/${lang.toUpperCase()}.png`"></li>
+            <li class="list-group-item"> Voto: {{ interRate() }}</li>
+            <li class="list-group-item star d-flex">
+                <p v-for="star in 5">
+                    <font-awesome-icon v-if="rate >= star *2" icon="fa-solid fa-star"/>
+                    <font-awesome-icon v-else icon="fa-regular fa-star" />
+                </p>
+            </li>
+        </ul>
     </div>
-    
-    <i class="fa-solid fa-star"></i>
-    </template>
+</template>
+
+
     
     
     <script>
@@ -30,7 +32,7 @@
             return {
                 langToCheck : ['en','ja','hi','da','zh','iu'],
                 imageUrl: 'https://image.tmdb.org/t/p/',
-                imageSize : 'w154',
+                imageSize : 'w342',
             }
         },
 
@@ -53,7 +55,15 @@
     
     <style lang="scss" scoped>
         .card{
-            width: 200px ;
-            border: 2px solid black;
-        }
+                color: white;
+                width: 200px ;
+                border: 2px solid red;
+
+                .card-body,
+                .list-group-item{
+                    color: white;
+                    border-color: red;
+                    background-color: #0f0f0f;
+                }
+            }
     </style>
